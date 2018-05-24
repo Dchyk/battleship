@@ -19,6 +19,7 @@ Ship
 
 Player
 - has a Board
+- 
 - is either 1) still playing, 2) won the game, 3) lost the game
 - is able to play a "shot"
 
@@ -32,10 +33,10 @@ squares all pushed into the board array:
 - When squares are assigned to a ship (a ship "occupies" those squares), they are popped off the board array, and pushed into the ship array. After this process is complete, only "empty" squares are left in board array. 
 - When a player takes a "shot" at a square, 
 it is tested against the board's remaining spaces, and if it is found there, this square is popped off of the board array and pushed into a "misses" array. This is to prevent the same square from ever being played twice, and to keep track of "misses" so they can be displayed to the player. 
-- If the "shot" is not found in the board array, then it must be occupied by a ship. So the next step is to check each ship for where the square that was hit by the shot? Or, is it to simply store the shot, and check each ship's squares to see if all are in the "hit" array. Also feels inefficient but makes sense. 
+- If the "shot" is not found in the board array, then it must be occupied by a ship. So is the next step to check each ship collection to find which one includes the square that was hit by the shot? Or, is it to simply store the shot, and check each ship's squares to see if all are in the "hit" array?
 - ships.each do |ship|
     if ship.all? { |squares| hits.include?(squares) }
-      ship.sunk = true
+      specific_ship.sunk = true
     end
   end
 

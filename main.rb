@@ -49,6 +49,29 @@ class Ship
 end
 
 class Player
+  def initialiaze(name)
+    @name = name
+  end
 
+  def place_ships
+    # Place 5 ships on the board at the start of the game
+  end
+
+  def shoot
+    # Take a turn - ie, choose a square and take a shot at it
+  end
+
+  def won?
+    return true if opponent.lost?
+    false
+  end
+
+  def lost?
+    return true if opponent.won?
+    false
+  end
 end
 
+class Game
+
+end
